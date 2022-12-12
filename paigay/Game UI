@@ -1,0 +1,472 @@
+#!/usr/bin/python3
+import tkinter as tk
+
+class TestApp:
+    def __init__(self, master=None):
+        # build ui
+        toplevel4 = tk.Tk() if master is None else tk.Toplevel(master)
+        toplevel4.configure(height=804, width=1200)
+        toplevel4.geometry("1200x804")
+        toplevel4.maxsize(1920, 1080)
+        toplevel4.minsize(1200, 804)
+        toplevel4.overrideredirect("False")
+        toplevel4.resizable(True, True)
+        toplevel4.title("Game")
+        frame3 = tk.Frame(toplevel4)
+        frame3.configure(background="#414141", cursor="arrow", height=804, width=1200)
+        frame4 = tk.Frame(frame3)
+        frame4.configure(
+            background="#414141", borderwidth=1, height=600, relief="ridge", width=800
+        )
+        frame4.grid(column=0, columnspan=4, row=0, rowspan=3, sticky="nw")
+        frame5 = tk.Frame(frame3)
+        frame5.configure(
+            background="#414141", borderwidth=1, height=200, relief="ridge", width=400
+        )
+        frame5.grid(column=0, columnspan=2, row=3, sticky="se")
+        frame6 = tk.Frame(frame3)
+        frame6.configure(
+            background="#414141", borderwidth=1, height=600, relief="ridge", width=400
+        )
+        frame6.grid(column=5, columnspan=2, row=0, rowspan=3)
+        frame7 = tk.Frame(frame3)
+        frame7.configure(
+            background="#414141", borderwidth=1, height=200, relief="ridge", width=400
+        )
+        frame7.grid(column=5, columnspan=2, row=3, sticky="se")
+        frame8 = tk.Frame(frame3)
+        frame8.configure(
+            background="#414141", borderwidth=1, height=200, relief="ridge", width=400
+        )
+        frame8.grid(column=2, columnspan=2, row=3, sticky="se")
+        button1 = tk.Button(frame3)
+        self.button_line2_column2 = tk.StringVar()
+        button1.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {bold}",
+            foreground="#ffffff",
+            height=2,
+            highlightbackground="#414188",
+            highlightthickness=3,
+            textvariable=self.button_line2_column2,
+            width=16,
+        )
+        button1.grid(column=6, padx=17, pady=20, row=3, sticky="se")
+        button2 = tk.Button(frame3)
+        self.button_line1_column1 = tk.StringVar()
+        button2.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {bold}",
+            foreground="#ffffff",
+            height=2,
+            highlightbackground="#414188",
+            highlightthickness=3,
+            textvariable=self.button_line1_column1,
+            width=16,
+        )
+        button2.grid(column=5, padx=17, pady=20, row=3, sticky="nw")
+        button3 = tk.Button(frame3)
+        self.button_line1_column2 = tk.StringVar()
+        button3.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {bold}",
+            foreground="#ffffff",
+            height=2,
+            highlightbackground="#414188",
+            highlightthickness=3,
+            textvariable=self.button_line1_column2,
+            width=16,
+        )
+        button3.grid(column=6, padx=17, pady=20, row=3, sticky="ne")
+        button8 = tk.Button(frame3)
+        self.button_line2_column1 = tk.StringVar()
+        button8.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {bold}",
+            foreground="#ffffff",
+            height=2,
+            highlightbackground="#414188",
+            highlightthickness=3,
+            textvariable=self.button_line2_column1,
+            width=16,
+        )
+        button8.grid(column=5, padx=17, pady=20, row=3, sticky="sw")
+        message46 = tk.Message(frame3)
+        message46.configure(
+            aspect=2000,
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            text="My stats",
+        )
+        message46.grid(column=0, columnspan=2, padx=150, pady=12, row=3, sticky="ne")
+        message47 = tk.Message(frame3)
+        message47.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            text="HP    ",
+        )
+        message47.grid(column=0, padx=12, row=3, sticky="w")
+        message48 = tk.Message(frame3)
+        message48.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            text="ATK",
+        )
+        message48.grid(column=1, padx=30, row=3, sticky="e")
+        message49 = tk.Message(frame3)
+        message49.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            text="ENE",
+        )
+        message49.grid(column=1, padx=30, pady=12, row=3, sticky="se")
+        message50 = tk.Message(frame3)
+        message50.configure(
+            aspect=450,
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            justify="right",
+            text="DEF      ",
+        )
+        message50.grid(column=0, padx=12, pady=12, row=3, sticky="sw")
+        message51 = tk.Message(frame3)
+        self.lp = tk.IntVar()
+        message51.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            textvariable=self.lp,
+        )
+        message51.grid(column=0, padx=55, row=3, sticky="w")
+        message52 = tk.Message(frame3)
+        self.dmg = tk.IntVar()
+        message52.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            textvariable=self.dmg,
+        )
+        message52.grid(column=1, padx=12, row=3, sticky="e")
+        message53 = tk.Message(frame3)
+        self.dfc = tk.IntVar()
+        message53.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            textvariable=self.dfc,
+        )
+        message53.grid(column=0, padx=55, pady=12, row=3, sticky="sw")
+        message54 = tk.Message(frame3)
+        self.total_energy = tk.IntVar()
+        message54.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            textvariable=self.total_energy,
+        )
+        message54.grid(column=1, padx=12, pady=12, row=3, sticky="se")
+        message55 = tk.Message(frame3)
+        message55.configure(
+            aspect=2000,
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            text="Enemy stats",
+        )
+        message55.grid(column=2, columnspan=2, pady=12, row=3, sticky="n")
+        message56 = tk.Message(frame3)
+        message56.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            text="HP    ",
+        )
+        message56.grid(column=2, padx=12, row=3, sticky="w")
+        message58 = tk.Message(frame3)
+        message58.configure(
+            aspect=450,
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            justify="right",
+            text="DEF      ",
+        )
+        message58.grid(column=2, padx=12, pady=12, row=3, sticky="sw")
+        message59 = tk.Message(frame3)
+        self.enemy_defense = tk.IntVar()
+        message59.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            textvariable=self.enemy_defense,
+        )
+        message59.grid(column=2, columnspan=999, padx=55, pady=12, row=3, sticky="sw")
+        message62 = tk.Message(frame3)
+        self.papyrus_line2 = tk.StringVar()
+        message62.configure(
+            aspect=1800,
+            background="#414141",
+            font="{Papyrus} 10 {italic}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.papyrus_line2,
+        )
+        message62.grid(column=0, columnspan=999, padx=30, pady=90, row=0, sticky="nw")
+        message63 = tk.Message(frame3)
+        self.papyrus_line3 = tk.StringVar()
+        message63.configure(
+            aspect=1800,
+            background="#414141",
+            font="{Papyrus} 10 {italic}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=0,
+            textvariable=self.papyrus_line3,
+        )
+        message63.grid(column=0, columnspan=999, padx=30, pady=150, row=0, sticky="nw")
+        message64 = tk.Message(frame3)
+        self.papyrus_line4 = tk.StringVar()
+        message64.configure(
+            aspect=1800,
+            background="#414141",
+            font="{Papyrus} 10 {italic}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.papyrus_line4,
+        )
+        message64.grid(column=0, columnspan=999, padx=30, pady=210, row=0, sticky="nw")
+        message65 = tk.Message(frame3)
+        self.papyrus_line5 = tk.StringVar()
+        message65.configure(
+            aspect=1800,
+            background="#414141",
+            font="{Papyrus} 10 {italic}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.papyrus_line5,
+        )
+        message65.grid(column=0, columnspan=999, padx=30, pady=270, row=0, sticky="nw")
+        message66 = tk.Message(frame3)
+        self.papyrus_line1 = tk.StringVar()
+        message66.configure(
+            aspect=1800,
+            background="#414141",
+            font="{Papyrus} 10 {italic}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.papyrus_line1,
+        )
+        message66.grid(column=0, columnspan=22, padx=30, pady=30, row=0, sticky="nw")
+        message67 = tk.Message(frame3)
+        self.wingdings_line1_column1 = tk.StringVar()
+        message67.configure(
+            aspect=900,
+            background="#414141",
+            font="{Wingdings} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.wingdings_line1_column1,
+        )
+        message67.grid(column=5, columnspan=22, padx=30, pady=30, row=0, sticky="nw")
+        message68 = tk.Message(frame3)
+        self.wingdings_line2_column1 = tk.StringVar()
+        message68.configure(
+            aspect=900,
+            background="#414141",
+            font="{Wingdings} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.wingdings_line2_column1,
+        )
+        message68.grid(column=5, columnspan=22, padx=30, pady=90, row=0, sticky="nw")
+        message69 = tk.Message(frame3)
+        self.wingdings_line3_column1 = tk.StringVar()
+        message69.configure(
+            aspect=900,
+            background="#414141",
+            font="{Wingdings} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=0,
+            textvariable=self.wingdings_line3_column1,
+        )
+        message69.grid(column=5, columnspan=22, padx=30, pady=150, row=0, sticky="nw")
+        message70 = tk.Message(frame3)
+        self.wingdings_line4_column1 = tk.StringVar()
+        message70.configure(
+            aspect=900,
+            background="#414141",
+            font="{Wingdings} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.wingdings_line4_column1,
+        )
+        message70.grid(column=5, columnspan=22, padx=30, pady=210, row=0, sticky="nw")
+        message71 = tk.Message(frame3)
+        self.wingdings_line5_column1 = tk.StringVar()
+        message71.configure(
+            aspect=900,
+            background="#414141",
+            font="{Wingdings} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.wingdings_line5_column1,
+        )
+        message71.grid(column=5, columnspan=22, padx=30, pady=270, row=0, sticky="nw")
+        message72 = tk.Message(frame3)
+        self.wingdings_line6_column1 = tk.StringVar()
+        message72.configure(
+            aspect=900,
+            background="#414141",
+            font="{Wingdings} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.wingdings_line6_column1,
+        )
+        message72.grid(column=5, columnspan=22, padx=30, pady=330, row=0, rowspan=66, sticky="nw")
+        message73 = tk.Message(frame3)
+        self.wingdings_line7_column1 = tk.StringVar()
+        message73.configure(
+            aspect=900,
+            background="#414141",
+            font="{Wingdings} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.wingdings_line7_column1,
+        )
+        message73.grid(column=5, columnspan=22, padx=30, pady=390, row=0, rowspan=66, sticky="nw")
+        message74 = tk.Message(frame3)
+        self.wingdings_line8_column1 = tk.StringVar()
+        message74.configure(
+            aspect=900,
+            background="#414141",
+            font="{Wingdings} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.wingdings_line8_column1,
+        )
+        message74.grid(column=5, columnspan=22, padx=30, pady=450, row=0, rowspan=66, sticky="nw")
+        message75 = tk.Message(frame3)
+        self.wingdings_line9_column1 = tk.StringVar()
+        message75.configure(
+            aspect=900,
+            background="#414141",
+            font="{Wingdings} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            textvariable=self.wingdings_line9_column1,
+        )
+        message75.grid(column=5, columnspan=22, padx=30, pady=510, row=0, rowspan=66, sticky="nw")
+        message1 = tk.Message(frame3)
+        message1.configure(
+            aspect=450,
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            justify="right",
+            text="LVL       ",
+        )
+        message1.grid(column=3, padx=12, pady=12, row=3, sticky="se")
+        message2 = tk.Message(frame3)
+        self.enemy_level = tk.IntVar()
+        message2.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            textvariable=self.enemy_level,
+        )
+        message2.grid(column=3, padx=12, pady=12, row=3, sticky="se")
+        message3 = tk.Message(frame3)
+        message3.configure(
+            aspect=450,
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            justify="right",
+            text="ATK      ",
+        )
+        message3.grid(column=3, padx=12, pady=12, row=3, sticky="e")
+        message4 = tk.Message(frame3)
+        self.enemy_damage = tk.IntVar()
+        message4.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            textvariable=self.enemy_damage,
+        )
+        message4.grid(column=3, padx=12, row=3, sticky="e")
+        message5 = tk.Message(frame3)
+        message5.configure(
+            aspect=450,
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            justify="right",
+            text="HP      ",
+        )
+        message5.grid(column=2, padx=12, pady=12, row=3, sticky="w")
+        message6 = tk.Message(frame3)
+        self.elp = tk.IntVar()
+        message6.configure(
+            background="#414141",
+            font="{Comic Sans MS} 10 {}",
+            foreground="#ffffff",
+            highlightbackground="#414188",
+            highlightthickness=1,
+            textvariable=self.elp,
+        )
+        message6.grid(column=2, padx=55, row=3, sticky="w")
+        frame3.pack(expand="true", fill="both", side="top")
+        frame3.grid_propagate(0)
+
+        # Main widget
+        self.mainwindow = toplevel4
+
+    def run(self):
+        self.mainwindow.mainloop()
+
+
+if __name__ == "__main__":
+    app = TestApp()
+    app.run()
